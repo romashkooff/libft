@@ -6,11 +6,11 @@
 /*   By: romashko <romashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:39:04 by romashko          #+#    #+#             */
-/*   Updated: 2024/11/22 19:21:49 by romashko         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:55:36 by romashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../include/get_next_line.h"
 
 size_t	ft_strlen(const char *s)
 {

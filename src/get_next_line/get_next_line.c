@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: oromashk <oromashk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romashko <romashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:37:01 by romashko          #+#    #+#             */
-/*   Updated: 2024/11/24 15:56:51 by oromashk         ###   ########.fr       */
+/*   Updated: 2024/12/01 17:55:42 by romashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../include/get_next_line.h"
 
 char	*read_file(int fd, char *stash, char *buffer)
 {
@@ -75,23 +75,23 @@ char	*new_stash_from_stash(char *stash)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*stash;
+	static char	*stash[FD_MAX];
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (free(stash), stash = NULL, NULL);
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FD_MAX)
+		return (free(stash[fd]), stash[fd] = NULL, NULL);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (buffer == NULL)
 		return (NULL);
-	if (!stash)
-		stash = ft_calloc(1, sizeof(char));
-	if (!ft_strchr(stash, '\n'))
-		stash = read_file(fd, stash, buffer);
+	if (!stash[fd])
+		stash[fd] = ft_calloc(1, sizeof(char));
+	if (!ft_strchr(stash[fd], '\n'))
+		stash[fd] = read_file(fd, stash[fd], buffer);
 	free(buffer);
-	if (!stash)
-		return (free(stash), NULL);
-	line = line_from_stash(stash);
-	stash = new_stash_from_stash(stash);
+	if (!stash[fd])
+		return (free(stash[fd]), NULL);
+	line = line_from_stash(stash[fd]);
+	stash[fd] = new_stash_from_stash(stash[fd]);
 	return (line);
 }
 

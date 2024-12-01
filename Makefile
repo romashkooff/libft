@@ -51,8 +51,8 @@ LIBFT_SRCS = \
 		src/libft/ft_lstiter.c \
 		src/libft/ft_lstmap.c
 GNL_SRCS = \
-		src/get_next_line/get_next_line_bonus.c	\
-		src/get_next_line/get_next_line_utils_bonus.c
+		src/get_next_line/get_next_line.c	\
+		src/get_next_line/get_next_line_utils.c
 FT_PRINTF_SRCS = \
 		src/ft_printf/ft_print_cs.c \
 		src/ft_printf/ft_print_d.c \
@@ -69,7 +69,7 @@ AR = ar -rcs ${NAME}
 RM = rm -f
 HEADERS = \
 		include/ft_printf.h \
-		include/get_next_line_bonus.h \
+		include/get_next_line.h \
 		include/libft.h
 
 all: ${NAME}
@@ -93,4 +93,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all clean fclean re

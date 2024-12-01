@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romashko <romashko@student.42.fr>          +#+  +:+       +#+        */
+/*   By: oromashk <oromashk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 08:40:11 by romashko          #+#    #+#             */
-/*   Updated: 2024/11/22 19:22:23 by romashko         ###   ########.fr       */
+/*   Updated: 2024/11/24 15:57:04 by oromashk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 10
 # endif
+
+# define FD_MAX 1024
 
 # include <fcntl.h>
 # include <stdio.h>
