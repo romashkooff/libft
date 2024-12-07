@@ -6,13 +6,13 @@
 /*   By: romashko <romashko@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 18:13:33 by romashko          #+#    #+#             */
-/*   Updated: 2024/12/01 18:26:10 by romashko         ###   ########.fr       */
+/*   Updated: 2024/12/07 23:13:21 by romashko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
-#include "include/get_next_line.h"
-#include "include/libft.h"
+#include "../include/ft_printf.h"
+#include "../include/get_next_line.h"
+#include "../include/libft.h"
 
 int	main(void)
 {
@@ -20,7 +20,7 @@ int	main(void)
 	int		fd;
 	int		i;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("tests/text.txt", O_RDONLY);
 	i = 0;
 	while (1)
 	{
